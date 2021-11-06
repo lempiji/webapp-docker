@@ -10,8 +10,8 @@
 
 - For development
   - `rdmd start`
-    - Auto restart server on save source
-    - Hot reloading scripts on save source
+    - Auto restart server
+    - Hot reloading scripts
 - For build image
   - `rdmd build`
     - Build Dockerfile with release build

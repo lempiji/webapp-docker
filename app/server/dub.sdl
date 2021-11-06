@@ -3,7 +3,7 @@ description "web application"
 authors "lempiji"
 copyright "Copyright © 2021, lempiji"
 
-dependency "vibe-d" version="~>0.9.3"
+dependency "vibe-d" version="~>0.9.4"
 dependency "vibe-d:tls" version="*"
 subConfiguration "vibe-d:tls" "openssl-1.1"
 

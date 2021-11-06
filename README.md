@@ -18,5 +18,6 @@
 
 # Requirements
 
+- D Compiler (rdmd)
 - Node.js
 - Docker

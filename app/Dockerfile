@@ -21,7 +21,7 @@ WORKDIR /tmp
 COPY ./client /tmp
 RUN npm i && npm run build
 
-FROM alpine:latest as publish
+FROM alpine:3.16 as publish
 EXPOSE 8080
 WORKDIR /app
 

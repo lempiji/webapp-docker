@@ -9,7 +9,7 @@ void main()
     logInfo("Start Application Server");
 
     auto host = environment.get("HOST", "0.0.0.0");
-    auto port = to!ushort(environment.get("PORT", "80"));
+    auto port = to!ushort(environment.get("PORT", "8080"));
 
     auto settings = new HTTPServerSettings;
     settings.port = port;

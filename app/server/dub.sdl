@@ -4,8 +4,12 @@ authors "lempiji"
 copyright "Copyright © 2021, lempiji"
 
 dependency "vibe-d" version="~>0.9.4"
-dependency "vibe-d:tls" version="*"
-subConfiguration "vibe-d:tls" "openssl-1.1"
 
 targetPath "bin"
-copyFiles "public"
+
+configuration "default" {
+    targetType "executable"
+}
+configuration "deps-only" {
+    targetType "none"
+}

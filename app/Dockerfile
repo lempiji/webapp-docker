@@ -2,8 +2,7 @@ FROM alpine:3.16 AS server
 WORKDIR /tmp/
 
 RUN apk update && \
-    apk add ldc gcc dub zlib-dev openssl-dev libcurl musl-dev && \
-    rm -rf /var/cache/apk/*
+    apk add --no-cache ldc gcc dub zlib-dev openssl-dev libcurl musl-dev
 
 COPY ./server/dub.selections.json /tmp/
 RUN dub run fetch-selections
@@ -29,8 +28,7 @@ EXPOSE 8080
 WORKDIR /app
 
 RUN apk update && \
-    apk add ldc-runtime zlib openssl && \
-    rm -rf /var/cache/apk/*
+    apk add --no-cache ldc-runtime zlib openssl
 
 RUN addgroup --gid 2000 appgroup \
     && adduser --uid 1000 -D appuser appgroup \

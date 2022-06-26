@@ -18,8 +18,11 @@ RUN dub build --build=${BUILD_MODE} --parallel --nodeps
 FROM node:16-buster-slim AS client
 WORKDIR /tmp
 
+COPY ./client/package*.json /tmp
+RUN npm i
+
 COPY ./client /tmp
-RUN npm i && npm run build
+RUN npm run build
 
 FROM alpine:3.16 as publish
 EXPOSE 8080

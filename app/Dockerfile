@@ -8,6 +8,7 @@ COPY ./server/dub.selections.json /tmp/
 RUN dub run fetch-selections
 
 COPY ./server/dub.sdl /tmp/
+ENV DC=ldc2
 ARG BUILD_MODE=release
 RUN dub build --build=${BUILD_MODE} --config=deps-only --parallel
 
